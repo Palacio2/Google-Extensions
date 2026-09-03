@@ -75,13 +75,13 @@ window.JobFilterExt.FilterManager = class FilterManager {
             element.setAttribute('data-cached-text', text);
           }
           
-          const shouldHide = keywords.some(keyword => text.includes(keyword));
-          if (shouldHide) {
+          const matchedKeyword = keywords.find(keyword => text.includes(keyword));
+          if (matchedKeyword) {
             if (!element.hasAttribute('data-jf-counted')) {
               element.setAttribute('data-jf-counted', 'true');
               newHiddenCount++;
             }
-            this.adapter.hideElement(element, this.settings.revealHidden);
+            this.adapter.hideElement(element, this.settings.revealHidden, matchedKeyword);
           } else {
             this.adapter.showElement(element);
           }

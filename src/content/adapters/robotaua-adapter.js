@@ -11,8 +11,8 @@ window.JobFilterExt.RobotaUaAdapter = class RobotaUaAdapter extends window.JobFi
     return allText.replace(/\s+/g, ' ');
   }
 
-  hideElement(element, revealHidden) {
-    super.hideElement(element, revealHidden);
+  hideElement(element, revealHidden, reason) {
+    super.hideElement(element, revealHidden, reason);
     if (!revealHidden) {
       element.style.opacity = '0.1';
       element.style.pointerEvents = 'none';

@@ -9,7 +9,10 @@ window.JobFilterExt.BaseAdapter = class BaseAdapter {
     throw new Error('getListingText must be implemented');
   }
 
-  hideElement(element, revealHidden) {
+  hideElement(element, revealHidden, reason) {
+    if (reason) {
+      element.setAttribute('data-jf-reason', reason);
+    }
     if (revealHidden) {
       element.classList.remove('job-filter-hidden');
       element.classList.add('job-filter-revealed');
