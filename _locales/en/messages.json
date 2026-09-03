@@ -130,5 +130,14 @@
   },
   "promo_btn": {
     "message": "Explore Districts"
+  },
+  "stats_hidden": {
+    "message": "Ads hidden:"
+  },
+  "stats_saved": {
+    "message": "Time saved:"
+  },
+  "min_short": {
+    "message": "min"
   }
 }

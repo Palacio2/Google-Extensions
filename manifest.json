@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extName__",
-  "version": "1.0",
+  "version": "1.1",
   "default_locale": "en",
   "description": "__MSG_extDesc__",
   "icons": {
@@ -23,7 +23,9 @@
         "src/popup/locales/*",
         "src/shared/*"
       ],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "content_scripts": [
@@ -31,7 +33,9 @@
       "matches": [
         "*://*.olx.ua/*",
         "*://*.olx.pl/*",
-        "*://*.pracuj.pl/*"
+        "*://*.pracuj.pl/*",
+        "*://*.work.ua/*",
+        "*://*.robota.ua/*"
       ],
       "css": [
         "src/content/style.css"
@@ -42,6 +46,8 @@
         "src/content/adapters/base-adapter.js",
         "src/content/adapters/olx-adapter.js",
         "src/content/adapters/pracuj-adapter.js",
+        "src/content/adapters/workua-adapter.js",
+        "src/content/adapters/robotaua-adapter.js",
         "src/content/core/filter.js",
         "src/content/ui/widget.js",
         "src/content/index.js"

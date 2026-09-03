@@ -130,5 +130,14 @@
   },
   "promo_btn": {
     "message": "Дивитись райони"
+  },
+  "stats_hidden": {
+    "message": "Приховано спаму:"
+  },
+  "stats_saved": {
+    "message": "Заощаджено часу:"
+  },
+  "min_short": {
+    "message": "хв"
   }
 }

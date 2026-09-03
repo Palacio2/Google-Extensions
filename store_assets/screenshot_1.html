@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1280px; height: 800px;
+    background: radial-gradient(circle at 15% 20%, #1e293b 0%, #090d16 100%);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 85px;
+    position: relative;
+    overflow: hidden;
+  }
+  .glow {
+    position: absolute; width: 650px; height: 650px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0) 70%);
+    top: -120px; right: 80px; pointer-events: none;
+  }
+  .glow2 {
+    position: absolute; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0) 70%);
+    bottom: -150px; left: -100px; pointer-events: none;
+  }
+  .left {
+    max-width: 560px;
+    z-index: 2;
+  }
+  .pill-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #60a5fa;
+    padding: 8px 16px; border-radius: 9999px;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: 50px; font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.5px; margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h1 span {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  p {
+    font-size: 20px; line-height: 1.5; color: #94a3b8; margin-bottom: 36px;
+  }
+  .features {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .feat-item {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 17px; font-weight: 600; color: #e2e8f0;
+  }
+  .feat-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  
+  .popup-wrapper {
+    width: 360px;
+    height: 560px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 16px 18px;
+    box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 50px rgba(59, 130, 246, 0.25);
+    display: flex;
+    flex-direction: column;
+    color: #1e293b;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transform: perspective(1200px) rotateY(-7deg) rotateX(3deg);
+    transition: all 0.3s ease;
+  }
+  .header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #3b82f6;
+  }
+  .header-left h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .mock-switch {
+    width: 42px; height: 24px;
+    background: #3b82f6;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+  }
+  .mock-switch::after {
+    content: ''; position: absolute;
+    width: 18px; height: 18px;
+    background: white; border-radius: 50%;
+    top: 3px; right: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .mock-switch.off {
+    background: #cbd5e1;
+    box-shadow: none;
+  }
+  .mock-switch.off::after {
+    right: auto; left: 3px;
+  }
+  .mock-switch.sm {
+    width: 36px; height: 20px;
+  }
+  .mock-switch.sm::after {
+    width: 14px; height: 14px; top: 3px; right: 3px;
+  }
+  .mock-switch.sm.off::after {
+    right: auto; left: 3px;
+  }
+
+  .country-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+  }
+  .country-val {
+    background: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #1e293b;
+  }
+
+  .reveal-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    border: 1px dashed #f472b6;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #be185d;
+    margin-bottom: 10px;
+  }
+
+  .tab-bar {
+    display: flex;
+    gap: 4px;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    color: #64748b;
+  }
+  .tab-item.active {
+    background: white;
+    color: #3b82f6;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .cat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+  }
+  .cat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+  .cat-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cat-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cat-status {
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+    width: 32px;
+    text-align: right;
+  }
+
+  .action-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .btn-coffee {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fcd34d;
+    color: #b45309;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .btn-rate {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .footer-row {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-sites {
+    font-weight: 700;
+    color: #3b82f6;
+  }
+
+  /* 3D Glass Badge Overlay */
+  .badge-floating {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.5);
+    padding: 12px 18px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(16px);
+    z-index: 10;
+  }
+  .badge-floating.b1 {
+    bottom: 40px; left: -50px;
+  }
+  .badge-floating.b2 {
+    top: 50px; right: -40px;
+  }
+
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+
+  <div class="left">
+    <div class="pill-tag">🚀 CHROME EXTENSION</div>
+    <h1>Stop Wasting Time on <span>Spam Vacancies</span></h1>
+    <p>Instantly hide taxi, delivery, warehouse, and unwanted postings on OLX and Pracuj.pl with 1-click smart filters.</p>
+    <div class="features">
+      <div class="feat-item">
+        <div class="feat-icon">🎯</div>
+        <span>1-Click Category Toggles (Taxi, Delivery, Drivers, Sales)</span>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">⚡</div>
+        <span>Ultra-Fast: Instant DOM filtering without slowing down pages</span>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">🌍</div>
+        <span>Full support for OLX.pl, OLX.ua and Pracuj.pl</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right" style="position:relative; z-index:2;">
+    <div class="popup-wrapper">
+      <div class="header-box">
+        <div class="header-left">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+          <h2>CleanJob Filter</h2>
+        </div>
+        <div class="mock-switch"></div>
+      </div>
+
+      <div class="country-bar">
+        <span>Search Country:</span>
+        <div class="country-val">
+          <span>Poland (PL)</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+
+      <div class="reveal-bar">
+        <span>👀 Preview hidden</span>
+        <div class="mock-switch sm off"></div>
+      </div>
+
+      <div class="tab-bar">
+        <div class="tab-item active">Categories</div>
+        <div class="tab-item">Custom Words</div>
+      </div>
+
+      <div class="cat-list">
+        <div class="cat-item">
+          <div class="cat-label"><span>🚖</span> Taxi (Bolt, Uber...)</div>
+          <div class="cat-right"><span class="cat-status" style="color:#3b82f6;">On</span><div class="mock-switch sm"></div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-label"><span>🛵</span> Couriers (Glovo, Wolt...)</div>
+          <div class="cat-right"><span class="cat-status" style="color:#3b82f6;">On</span><div class="mock-switch sm"></div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-label"><span>🚙</span> Drivers (Cat. B)</div>
+          <div class="cat-right"><span class="cat-status" style="color:#3b82f6;">On</span><div class="mock-switch sm"></div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-label"><span>🚛</span> Truck Drivers (C+E)</div>
+          <div class="cat-right"><span class="cat-status">Off</span><div class="mock-switch sm off"></div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-label"><span>🛒</span> Sales / Cashiers</div>
+          <div class="cat-right"><span class="cat-status">Off</span><div class="mock-switch sm off"></div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-label"><span>📦</span> Warehouse</div>
+          <div class="cat-right"><span class="cat-status">Off</span><div class="mock-switch sm off"></div></div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <div class="btn-coffee">☕ Coffee</div>
+        <div class="btn-rate">⭐ Rate</div>
+      </div>
+
+      <div class="footer-row">
+        <span>Works on:</span>
+        <span class="footer-sites">OLX.pl • OLX.ua • Pracuj.pl</span>
+      </div>
+    </div>
+
+    <div class="badge-floating b1">
+      <div style="background:#10b981; color:white; font-weight:800; font-size:14px; padding:4px 10px; border-radius:8px;">✓ Active</div>
+      <div style="font-size:14px; font-weight:600; color:#f1f5f9;">Blocked 15+ irrelevant ads in 0.1s</div>
+    </div>
+  </div>
+</body>
+</html>

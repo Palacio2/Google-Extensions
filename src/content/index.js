@@ -16,6 +16,10 @@
     adapter = new window.JobFilterExt.OlxAdapter();
   } else if (hostname.includes('pracuj.pl')) {
     adapter = new window.JobFilterExt.PracujAdapter();
+  } else if (hostname.includes('work.ua')) {
+    adapter = new window.JobFilterExt.WorkUaAdapter();
+  } else if (hostname.includes('robota.ua')) {
+    adapter = new window.JobFilterExt.RobotaUaAdapter();
   }
 
   if (adapter) {

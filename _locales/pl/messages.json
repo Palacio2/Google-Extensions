@@ -130,5 +130,14 @@
   },
   "promo_btn": {
     "message": "Sprawdź dzielnice"
+  },
+  "stats_hidden": {
+    "message": "Zablokowany spam:"
+  },
+  "stats_saved": {
+    "message": "Zaoszczędzony czas:"
+  },
+  "min_short": {
+    "message": "min"
   }
 }

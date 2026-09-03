@@ -60,6 +60,7 @@ window.JobFilterExt.FilterManager = class FilterManager {
     const BATCH = 30; // Збільшено розмір батчу для швидкості
     for (let i = 0; i < elementsArray.length; i += BATCH) {
       await new Promise(r => requestAnimationFrame(() => {
+        let newHiddenCount = 0;
         elementsArray.slice(i, i + BATCH).forEach(element => {
           // Кешування тексту: читаємо DOM тільки 1 раз для кожної картки
           let text = element.getAttribute('data-cached-text');
@@ -70,11 +71,18 @@ window.JobFilterExt.FilterManager = class FilterManager {
           
           const shouldHide = keywords.some(keyword => text.includes(keyword));
           if (shouldHide) {
+            if (!element.hasAttribute('data-jf-counted')) {
+              element.setAttribute('data-jf-counted', 'true');
+              newHiddenCount++;
+            }
             this.adapter.hideElement(element, this.settings.revealHidden);
           } else {
             this.adapter.showElement(element);
           }
         });
+        if (newHiddenCount > 0) {
+          window.JobFilterExt.Storage.incrementStats(newHiddenCount);
+        }
         r();
       }));
       if (globalThis.scheduler?.yield) await scheduler.yield();

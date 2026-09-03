@@ -1,0 +1,135 @@
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+const assetsDir = path.join(__dirname, '..', 'store_assets');
+
+if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir, { recursive: true });
+
+const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    /* Important for transparency */
+    background: transparent !important;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .scene {
+    perspective: 1200px;
+  }
+  
+  .popup-wrapper {
+    width: 320px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 20px 40px rgba(0,0,0,0.2), 
+      inset 0 0 0 1px rgba(255,255,255,0.4);
+    padding: 16px;
+    transform: rotateY(15deg) rotateX(5deg);
+    transform-style: preserve-3d;
+  }
+  
+  .header-box { display: flex; justify-content: space-between; margin-bottom: 12px; align-items: center; }
+  .header-left { display: flex; align-items: center; gap: 8px; color: #1e293b; }
+  .header-left h2 { font-size: 15px; font-weight: 700; margin: 0; }
+  .mock-switch { width: 34px; height: 20px; background: #3b82f6; border-radius: 10px; position: relative; }
+  .mock-switch::after { content: ''; position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%; }
+  
+  .stats-banner {
+    display: flex; justify-content: space-between; align-items: center;
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 8px 12px; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+  .stat-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #334155; }
+  .stat-item strong { font-size: 13px; font-weight: 700; color: #3b82f6; }
+  .stat-divider { width: 1px; height: 20px; background: #e2e8f0; }
+  
+  .country-bar { background: white; border-radius: 10px; padding: 10px; margin-bottom: 12px; display: flex; justify-content: space-between; font-size: 12px; border: 1px solid #e2e8f0; }
+  .country-val { color: #3b82f6; font-weight: 600; }
+  
+  .tab-bar { display: flex; margin-bottom: 12px; background: #f1f5f9; border-radius: 8px; padding: 4px; }
+  .tab-item { flex: 1; text-align: center; font-size: 11px; font-weight: 600; padding: 6px; border-radius: 6px; color: #64748b; }
+  .tab-item.active { background: white; color: #3b82f6; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  
+  .cat-list { display: flex; flex-direction: column; gap: 6px; }
+  .cat-item { background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px; display: flex; justify-content: space-between; }
+  .cat-label { font-size: 12px; font-weight: 600; color: #1e293b; }
+  
+  .footer-carousel { text-align: center; font-size: 11px; color: #64748b; margin-top: 12px; font-weight: 600;}
+  .marquee { color: #3b82f6; margin-top: 4px; background: #f1f5f9; padding: 4px; border-radius: 6px;}
+
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="popup-wrapper">
+      <div class="header-box">
+        <div class="header-left">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+          <h2>CleanJob Filter</h2>
+        </div>
+        <div class="mock-switch"></div>
+      </div>
+      
+      <div class="stats-banner">
+        <div class="stat-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+          <span>Приховано:</span> <strong>342</strong>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Час:</span> <strong>17 хв</strong>
+        </div>
+      </div>
+      
+      <div class="country-bar"><span>Країна пошуку:</span><div class="country-val">Польща (PL)</div></div>
+      
+      <div class="tab-bar"><div class="tab-item active">Категорії</div><div class="tab-item">Свої слова</div></div>
+      
+      <div class="cat-list">
+        <div class="cat-item"><div class="cat-label">🚖 Taxi</div> <div class="mock-switch"></div></div>
+        <div class="cat-item"><div class="cat-label">🛵 Кур'єри</div> <div class="mock-switch"></div></div>
+        <div class="cat-item"><div class="cat-label">🚙 Водії</div> <div class="mock-switch" style="background:#e2e8f0;"></div></div>
+      </div>
+      
+      <div class="footer-carousel">
+        Працює на:
+        <div class="marquee">OLX.ua • OLX.pl • Pracuj • Work.ua • Robota.ua</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+
+const htmlPath = path.join(assetsDir, 'transparent_modal.html');
+const outPath = path.join(assetsDir, 'transparent_modal.png');
+fs.writeFileSync(htmlPath, html, 'utf8');
+
+console.log('Rendering 3D transparent modal...');
+const args = [
+  '--headless',
+  '--disable-gpu',
+  '--default-background-color=00000000',
+  '--window-size=800,800',
+  '--screenshot=' + outPath,
+  'file:///' + htmlPath.replace(/\\/g, '/')
+];
+
+spawnSync(edgePath, args);
+if (fs.existsSync(outPath)) {
+  console.log('Successfully generated transparent_modal.png!');
+}

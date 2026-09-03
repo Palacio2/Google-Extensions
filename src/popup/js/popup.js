@@ -39,6 +39,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   const keywordsList = document.getElementById('keywordsList');
   const clearAllBtn = document.getElementById('clearAllBtn');
   
+
+  const statTotal = document.getElementById('statTotal');
+  const statTime = document.getElementById('statTime');
+
+  window.JobFilterExt.Storage.getStats().then(stats => {
+    if (statTotal && statTime) {
+      const hidden = stats.totalHidden || 0;
+      statTotal.textContent = hidden;
+      // Assume 1 ad = 3 seconds saved. Convert to minutes.
+      const timeSavedMins = Math.floor((hidden * 3) / 60);
+      statTime.textContent = timeSavedMins + ' ' + i18n.t('min_short', 'хв');
+    }
+  });
+
   const customCountrySelect = document.getElementById('customCountrySelect');
   const selectSelected = document.getElementById('selectSelected');
   const selectedCountryText = document.getElementById('selectedCountryText');

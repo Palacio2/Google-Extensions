@@ -130,5 +130,14 @@
   },
   "promo_btn": {
     "message": "Смотреть районы"
+  },
+  "stats_hidden": {
+    "message": "Скрыто спама:"
+  },
+  "stats_saved": {
+    "message": "Сэкономлено времени:"
+  },
+  "min_short": {
+    "message": "мин"
   }
 }
