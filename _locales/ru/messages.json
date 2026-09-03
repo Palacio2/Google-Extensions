@@ -139,5 +139,8 @@
   },
   "min_short": {
     "message": "мин"
+  },
+  "hidden_badge": {
+    "message": "СКРЫТО"
   }
 }

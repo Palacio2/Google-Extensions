@@ -11,7 +11,8 @@ window.JobFilterExt.BaseAdapter = class BaseAdapter {
 
   hideElement(element, revealHidden, reason) {
     if (reason) {
-      element.setAttribute('data-jf-reason', reason);
+      const prefix = chrome.i18n.getMessage('hidden_badge') || 'HIDDEN';
+      element.setAttribute('data-jf-reason', `${prefix} (${reason})`);
     }
     if (revealHidden) {
       element.classList.remove('job-filter-hidden');

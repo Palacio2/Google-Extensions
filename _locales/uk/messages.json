@@ -139,5 +139,8 @@
   },
   "min_short": {
     "message": "хв"
+  },
+  "hidden_badge": {
+    "message": "ПРИХОВАНО"
   }
 }
