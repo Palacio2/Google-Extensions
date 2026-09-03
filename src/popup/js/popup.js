@@ -120,6 +120,28 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   let settings = await window.JobFilterExt.Storage.getSettings();
 
+  // РОЗУМНЕ АВТОВИЗНАЧЕННЯ: перевіряємо відкриту вкладку і самі ставимо потрібну країну
+  await new Promise((resolve) => {
+    chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+      if (tabs && tabs[0] && tabs[0].url) {
+        try {
+          const url = new URL(tabs[0].url);
+          const hostname = url.hostname;
+          let detected = null;
+          if (hostname.endsWith('.ua')) detected = 'ua';
+          else if (hostname.endsWith('.pl')) detected = 'pl';
+          
+          if (detected && detected !== settings.targetCountry) {
+            settings.targetCountry = detected;
+            await window.JobFilterExt.Storage.saveSettings(settings);
+          }
+        } catch(e) {}
+      }
+      resolve();
+    });
+  });
+
+
   enableToggle.checked = settings.enabled;
   revealToggle.checked = settings.revealHidden;
   revealStatusText.textContent = settings.revealHidden ? i18n.t('on') : i18n.t('off');

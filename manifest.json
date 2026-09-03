@@ -8,7 +8,8 @@
     "128": "src/assets/icon128.png"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "activeTab"
   ],
   "action": {
     "default_popup": "src/popup/popup.html",

@@ -32,7 +32,13 @@ window.JobFilterExt.FilterManager = class FilterManager {
       return;
     }
 
-    const country = this.settings.targetCountry;
+    let country = this.settings.targetCountry;
+    const hostname = window.location.hostname;
+    if (hostname.endsWith('.ua')) {
+      country = 'ua';
+    } else if (hostname.endsWith('.pl')) {
+      country = 'pl';
+    }
     let allKeywords = [...(this.settings.customKeywords[country] || [])];
     
     if (this.settings.activeGroups && this.settings.activeGroups[country]) {
