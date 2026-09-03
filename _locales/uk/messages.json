@@ -1,0 +1,134 @@
+{
+  "extName": {
+    "message": "Фільтр Вакансій"
+  },
+  "extDesc": {
+    "message": "Приховує непотрібні оголошення на OLX та Pracuj.pl за ключовими словами."
+  },
+  "actionTitle": {
+    "message": "Відкрити панель фільтрів"
+  },
+  "title": {
+    "message": "Фільтр Вакансій"
+  },
+  "country_select": {
+    "message": "Країна пошуку:"
+  },
+  "reveal_hidden": {
+    "message": "👀 Режим перегляду"
+  },
+  "country_pl": {
+    "message": "Польща (PL)"
+  },
+  "country_ua": {
+    "message": "Україна (UA)"
+  },
+  "cat_taxi": {
+    "message": "🚕 Таксі"
+  },
+  "cat_courier": {
+    "message": "🛵 Кур'єри / Доставка"
+  },
+  "cat_driver_b": {
+    "message": "🚙 Водії (Кат. B)"
+  },
+  "cat_driver_ce": {
+    "message": "🚚 Далекобійники (C+E)"
+  },
+  "cat_sales": {
+    "message": "🛒 Продавці / Касири"
+  },
+  "cat_warehouse": {
+    "message": "📦 Склад / Вантажники"
+  },
+  "cat_production": {
+    "message": "🏭 Виробництво"
+  },
+  "cat_callcenter": {
+    "message": "📞 Колл-центри"
+  },
+  "cat_construction": {
+    "message": "🏗️ Будівництво"
+  },
+  "cat_gastronomy": {
+    "message": "🍳 Гастрономія / Ресторани"
+  },
+  "cat_cleaning": {
+    "message": "🧹 Прибирання / Клінінг"
+  },
+  "cat_security": {
+    "message": "🛡️ Охорона"
+  },
+  "cat_mechanic": {
+    "message": "🔧 СТО / Автомеханіка"
+  },
+  "tab_categories": {
+    "message": "Категорії"
+  },
+  "tab_custom": {
+    "message": "Свої слова"
+  },
+  "custom_words_desc": {
+    "message": "Додайте своє слово або корінь слова (наприклад 'bolt' або 'kierowc')"
+  },
+  "add_word": {
+    "message": "Введіть слово..."
+  },
+  "add_btn": {
+    "message": "Додати"
+  },
+  "your_words": {
+    "message": "Ваші слова:"
+  },
+  "clear_all": {
+    "message": "Очистити"
+  },
+  "empty_list": {
+    "message": "Список порожній."
+  },
+  "confirm_clear": {
+    "message": "Видалити всі ваші власні слова?"
+  },
+  "cancel": {
+    "message": "Скасувати"
+  },
+  "delete": {
+    "message": "Видалити"
+  },
+  "ok": {
+    "message": "ОК"
+  },
+  "works_on": {
+    "message": "Працює на:"
+  },
+  "confirm_title": {
+    "message": "Підтвердження"
+  },
+  "on": {
+    "message": "Увімкнено"
+  },
+  "off": {
+    "message": "Вимкнено"
+  },
+  "donate": {
+    "message": "Пригостити кавою ☕"
+  },
+  "rate": {
+    "message": "Оцінити розширення ⭐️"
+  },
+  "donate_short": {
+    "message": "Кава"
+  },
+  "rate_short": {
+    "message": "Оцінити"
+  },
+  "promo_title": {
+    "message": "Шукаєш житло поруч з роботою?"
+  },
+  "promo_desc": {
+    "message": "Перевір безпеку, ціни оренди та транспорт у Бидгощі на District Explorer."
+  },
+  "promo_btn": {
+    "message": "Дивитись райони"
+  }
+}

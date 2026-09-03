@@ -1,0 +1,134 @@
+{
+  "extName": {
+    "message": "Filtr Ofert Pracy"
+  },
+  "extDesc": {
+    "message": "Ukrywa niechciane ogłoszenia na OLX i Pracuj.pl według słów kluczowych."
+  },
+  "actionTitle": {
+    "message": "Otwórz panel filtrów"
+  },
+  "title": {
+    "message": "Filtr Ofert Pracy"
+  },
+  "country_select": {
+    "message": "Kraj wyszukiwania:"
+  },
+  "reveal_hidden": {
+    "message": "👀 Podgląd ukrytych"
+  },
+  "country_pl": {
+    "message": "Polska (PL)"
+  },
+  "country_ua": {
+    "message": "Ukraina (UA)"
+  },
+  "cat_taxi": {
+    "message": "🚕 Taxi"
+  },
+  "cat_courier": {
+    "message": "🛵 Kurierzy / Dostawa"
+  },
+  "cat_driver_b": {
+    "message": "🚙 Kierowcy (Kat. B)"
+  },
+  "cat_driver_ce": {
+    "message": "🚚 Kierowcy ciężarówek (C+E)"
+  },
+  "cat_sales": {
+    "message": "🛒 Sprzedawcy / Kasjerzy"
+  },
+  "cat_warehouse": {
+    "message": "📦 Magazyn / Pakowacze"
+  },
+  "cat_production": {
+    "message": "🏭 Produkcja"
+  },
+  "cat_callcenter": {
+    "message": "📞 Call Center"
+  },
+  "cat_construction": {
+    "message": "🏗️ Budownictwo"
+  },
+  "cat_gastronomy": {
+    "message": "🍳 Gastronomia"
+  },
+  "cat_cleaning": {
+    "message": "🧹 Sprzątanie"
+  },
+  "cat_security": {
+    "message": "🛡️ Ochrona"
+  },
+  "cat_mechanic": {
+    "message": "🔧 Mechanika pojazdowa"
+  },
+  "tab_categories": {
+    "message": "Kategorie"
+  },
+  "tab_custom": {
+    "message": "Własne słowa"
+  },
+  "custom_words_desc": {
+    "message": "Dodaj własne słowo lub rdzeń (np. 'bolt' lub 'kierowc')"
+  },
+  "add_word": {
+    "message": "Wpisz słowo..."
+  },
+  "add_btn": {
+    "message": "Dodaj"
+  },
+  "your_words": {
+    "message": "Twoje słowa:"
+  },
+  "clear_all": {
+    "message": "Wyczyść wszystko"
+  },
+  "empty_list": {
+    "message": "Lista jest pusta."
+  },
+  "confirm_clear": {
+    "message": "Usunąć wszystkie własne słowa?"
+  },
+  "cancel": {
+    "message": "Anuluj"
+  },
+  "delete": {
+    "message": "Usuń"
+  },
+  "ok": {
+    "message": "OK"
+  },
+  "works_on": {
+    "message": "Działa na:"
+  },
+  "confirm_title": {
+    "message": "Potwierdzenie"
+  },
+  "on": {
+    "message": "Włączone"
+  },
+  "off": {
+    "message": "Wyłączone"
+  },
+  "donate": {
+    "message": "Postaw mi kawę ☕"
+  },
+  "rate": {
+    "message": "Oceń rozszerzenie ⭐️"
+  },
+  "donate_short": {
+    "message": "Kawa"
+  },
+  "rate_short": {
+    "message": "Oceń"
+  },
+  "promo_title": {
+    "message": "Szukasz mieszkania blisko pracy?"
+  },
+  "promo_desc": {
+    "message": "Sprawdź bezpieczeństwo, ceny najmu i dojazd w Bydgoszczy na District Explorer."
+  },
+  "promo_btn": {
+    "message": "Sprawdź dzielnice"
+  }
+}

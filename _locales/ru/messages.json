@@ -1,0 +1,134 @@
+{
+  "extName": {
+    "message": "Фильтр Вакансий"
+  },
+  "extDesc": {
+    "message": "Скрывает ненужные объявления на OLX и Pracuj.pl по ключевым словам."
+  },
+  "actionTitle": {
+    "message": "Открыть панель фильтров"
+  },
+  "title": {
+    "message": "Фильтр Вакансий"
+  },
+  "country_select": {
+    "message": "Страна поиска:"
+  },
+  "reveal_hidden": {
+    "message": "👀 Режим просмотра"
+  },
+  "country_pl": {
+    "message": "Польша (PL)"
+  },
+  "country_ua": {
+    "message": "Украина (UA)"
+  },
+  "cat_taxi": {
+    "message": "🚕 Такси"
+  },
+  "cat_courier": {
+    "message": "🛵 Курьеры / Доставка"
+  },
+  "cat_driver_b": {
+    "message": "🚙 Водители (Кат. B)"
+  },
+  "cat_driver_ce": {
+    "message": "🚚 Дальнобойщики (C+E)"
+  },
+  "cat_sales": {
+    "message": "🛒 Продавцы / Кассиры"
+  },
+  "cat_warehouse": {
+    "message": "📦 Склад / Грузчики"
+  },
+  "cat_production": {
+    "message": "🏭 Производство"
+  },
+  "cat_callcenter": {
+    "message": "📞 Колл-центры"
+  },
+  "cat_construction": {
+    "message": "🏗️ Строительство"
+  },
+  "cat_gastronomy": {
+    "message": "🍳 Гастрономия / Рестораны"
+  },
+  "cat_cleaning": {
+    "message": "🧹 Уборка / Клининг"
+  },
+  "cat_security": {
+    "message": "🛡️ Охрана"
+  },
+  "cat_mechanic": {
+    "message": "🔧 СТО / Автомеханика"
+  },
+  "tab_categories": {
+    "message": "Категории"
+  },
+  "tab_custom": {
+    "message": "Свои слова"
+  },
+  "custom_words_desc": {
+    "message": "Добавьте свое слово или корень слова (например 'bolt' или 'kierowc')"
+  },
+  "add_word": {
+    "message": "Введите слово..."
+  },
+  "add_btn": {
+    "message": "Добавить"
+  },
+  "your_words": {
+    "message": "Ваши слова:"
+  },
+  "clear_all": {
+    "message": "Очистить"
+  },
+  "empty_list": {
+    "message": "Список пуст."
+  },
+  "confirm_clear": {
+    "message": "Удалить все ваши собственные слова?"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "ok": {
+    "message": "ОК"
+  },
+  "works_on": {
+    "message": "Работает на:"
+  },
+  "confirm_title": {
+    "message": "Подтверждение"
+  },
+  "on": {
+    "message": "Включено"
+  },
+  "off": {
+    "message": "Выключено"
+  },
+  "donate": {
+    "message": "Угостить кофе ☕"
+  },
+  "rate": {
+    "message": "Оценить расширение ⭐️"
+  },
+  "donate_short": {
+    "message": "Кофе"
+  },
+  "rate_short": {
+    "message": "Оценить"
+  },
+  "promo_title": {
+    "message": "Ищешь жилье рядом с работой?"
+  },
+  "promo_desc": {
+    "message": "Проверь безопасность, цены аренды и транспорт в Быдгоще на District Explorer."
+  },
+  "promo_btn": {
+    "message": "Смотреть районы"
+  }
+}

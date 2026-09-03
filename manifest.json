@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "1.0",
+  "default_locale": "en",
+  "description": "__MSG_extDesc__",
+  "icons": {
+    "128": "src/assets/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "__MSG_actionTitle__"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/popup/popup.html",
+        "src/popup/css/*",
+        "src/popup/js/*",
+        "src/popup/locales/*",
+        "src/shared/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.olx.ua/*",
+        "*://*.olx.pl/*",
+        "*://*.pracuj.pl/*"
+      ],
+      "css": [
+        "src/content/style.css"
+      ],
+      "js": [
+        "src/shared/constants.js",
+        "src/shared/storage.js",
+        "src/content/adapters/base-adapter.js",
+        "src/content/adapters/olx-adapter.js",
+        "src/content/adapters/pracuj-adapter.js",
+        "src/content/core/filter.js",
+        "src/content/ui/widget.js",
+        "src/content/index.js"
+      ]
+    }
+  ]
+}

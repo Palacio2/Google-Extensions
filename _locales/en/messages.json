@@ -1,0 +1,134 @@
+{
+  "extName": {
+    "message": "Job Filter"
+  },
+  "extDesc": {
+    "message": "Hides unwanted ads on OLX and Pracuj.pl by keywords."
+  },
+  "actionTitle": {
+    "message": "Open Filter Panel"
+  },
+  "title": {
+    "message": "Job Filter"
+  },
+  "country_select": {
+    "message": "Search Country:"
+  },
+  "reveal_hidden": {
+    "message": "👀 Preview hidden"
+  },
+  "country_pl": {
+    "message": "Poland (PL)"
+  },
+  "country_ua": {
+    "message": "Ukraine (UA)"
+  },
+  "cat_taxi": {
+    "message": "🚕 Taxi"
+  },
+  "cat_courier": {
+    "message": "🛵 Couriers / Delivery"
+  },
+  "cat_driver_b": {
+    "message": "🚙 Drivers (Cat. B)"
+  },
+  "cat_driver_ce": {
+    "message": "🚚 Truck Drivers (C+E)"
+  },
+  "cat_sales": {
+    "message": "🛒 Sales / Cashiers"
+  },
+  "cat_warehouse": {
+    "message": "📦 Warehouse"
+  },
+  "cat_production": {
+    "message": "🏭 Production"
+  },
+  "cat_callcenter": {
+    "message": "📞 Call Centers"
+  },
+  "cat_construction": {
+    "message": "🏗️ Construction"
+  },
+  "cat_gastronomy": {
+    "message": "🍳 Gastronomy / Restaurants"
+  },
+  "cat_cleaning": {
+    "message": "🧹 Cleaning"
+  },
+  "cat_security": {
+    "message": "🛡️ Security"
+  },
+  "cat_mechanic": {
+    "message": "🔧 Auto Mechanics"
+  },
+  "tab_categories": {
+    "message": "Categories"
+  },
+  "tab_custom": {
+    "message": "Custom Words"
+  },
+  "custom_words_desc": {
+    "message": "Add a custom word or root (e.g. 'bolt' or 'kierowc')"
+  },
+  "add_word": {
+    "message": "Enter a word..."
+  },
+  "add_btn": {
+    "message": "Add"
+  },
+  "your_words": {
+    "message": "Your words:"
+  },
+  "clear_all": {
+    "message": "Clear all"
+  },
+  "empty_list": {
+    "message": "The list is empty."
+  },
+  "confirm_clear": {
+    "message": "Delete all your custom words?"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "ok": {
+    "message": "OK"
+  },
+  "works_on": {
+    "message": "Works on:"
+  },
+  "confirm_title": {
+    "message": "Confirmation"
+  },
+  "on": {
+    "message": "On"
+  },
+  "off": {
+    "message": "Off"
+  },
+  "donate": {
+    "message": "Buy me a coffee ☕"
+  },
+  "rate": {
+    "message": "Rate extension ⭐️"
+  },
+  "donate_short": {
+    "message": "Coffee"
+  },
+  "rate_short": {
+    "message": "Rate"
+  },
+  "promo_title": {
+    "message": "Looking for housing near work?"
+  },
+  "promo_desc": {
+    "message": "Check safety, rent prices and transport in Bydgoszcz on District Explorer."
+  },
+  "promo_btn": {
+    "message": "Explore Districts"
+  }
+}

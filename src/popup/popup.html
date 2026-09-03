@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="title">Фільтр Вакансій</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/toggle.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+  <div class="container">
+    
+    <header>
+      <div class="header-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        <h2 data-i18n="title">Фільтр Вакансій</h2>
+      </div>
+      <label class="toggle-switch main-toggle">
+        <input type="checkbox" id="enableToggle">
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <div class="country-selector">
+      <label data-i18n="country_select">Країна пошуку:</label>
+      <div class="custom-select" id="customCountrySelect">
+        <div class="select-selected" id="selectSelected">
+          <span id="selectedCountryText">Польща (PL)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="select-items select-hide" id="selectItems"></div>
+      </div>
+    </div>
+
+    <div class="settings-list" style="margin-bottom: 20px;">
+      <div class="settings-row preview-row" id="revealRow">
+        <div class="settings-label">
+          <span data-i18n="reveal_hidden">👀 Режим перегляду</span>
+        </div>
+        <div class="settings-right">
+          <span class="settings-status" id="revealStatusText">Вимкнено</span>
+          <label class="toggle-switch" style="pointer-events: none;">
+            <input type="checkbox" id="revealToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-target="tabCategories" data-i18n="tab_categories">Категорії</button>
+      <button class="tab-btn" data-target="tabCustom" data-i18n="tab_custom">Свої слова</button>
+    </div>
+
+    <div class="main-content">
+      <div id="tabCategories" class="tab-content active">
+        <div class="settings-list" id="categoriesList">
+          <!-- Categories injected here -->
+        </div>
+      </div>
+
+      <div id="tabCustom" class="tab-content">
+        <p class="help-text" data-i18n="custom_words_desc">Додайте своє слово або корінь слова (наприклад 'bolt' або 'kierowc')</p>
+        <div class="input-group">
+          <input type="text" id="keywordInput" data-i18n="add_word" placeholder="Введіть слово...">
+          <button id="addBtn" class="btn-primary" data-i18n="add_btn">Додати</button>
+        </div>
+        
+        <div class="keywords-header">
+          <span data-i18n="your_words">Ваші слова:</span>
+          <button id="clearAllBtn" class="text-btn" data-i18n="clear_all">Очистити</button>
+        </div>
+        <div class="keywords-list" id="keywordsList">
+          <!-- Keywords injected here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="support-actions">
+      <a href="https://www.buymeacoffee.com/CleanJob" target="_blank" id="donateBtn" class="support-btn donate">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        <span data-i18n="donate_short">Кава</span>
+      </a>
+      <a href="#" target="_blank" id="rateBtn" class="support-btn rate">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span data-i18n="rate_short">Оцінити</span>
+      </a>
+    </div>
+    
+    <!-- PROMO BANNER -->
+    <a id="districtPromoBanner" class="promo-banner" href="#" target="_blank" style="display: none;">
+      <div class="promo-icon">🗺️</div>
+      <div class="promo-content">
+        <div class="promo-title" data-i18n="promo_title"></div>
+        <div class="promo-desc" data-i18n="promo_desc"></div>
+      </div>
+      <div class="promo-action">
+        <span class="promo-btn-text" data-i18n="promo_btn"></span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+    
+    <footer>
+      <div class="footer-carousel">
+        <span class="footer-prefix" data-i18n="works_on">Працює на:</span>
+        <div class="carousel-words">
+          <div class="marquee-content">
+            <div class="marquee-half">
+              <span>OLX.ua</span> <span class="dot">•</span>
+              <span>OLX.pl</span> <span class="dot">•</span>
+              <span>Pracuj.pl</span> <span class="dot">•</span>
+            </div>
+            <div class="marquee-half" aria-hidden="true">
+              <span>OLX.ua</span> <span class="dot">•</span>
+              <span>OLX.pl</span> <span class="dot">•</span>
+              <span>Pracuj.pl</span> <span class="dot">•</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <h3 id="modalTitle" data-i18n="confirm_title">Підтвердження</h3>
+      <p id="modalMessage">Ви впевнені?</p>
+      <div class="modal-actions">
+        <button id="modalCancelBtn" class="btn-secondary" data-i18n="cancel">Скасувати</button>
+        <button id="modalConfirmBtn" class="btn-danger" data-i18n="ok">ОК</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/storage.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+</html>
