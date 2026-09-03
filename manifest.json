@@ -36,7 +36,11 @@
         "*://*.olx.pl/*",
         "*://*.pracuj.pl/*",
         "*://*.work.ua/*",
-        "*://*.robota.ua/*"
+        "*://*.robota.ua/*",
+        "*://*.jooble.org/*",
+        "*://*.jooble.pl/*",
+        "*://*.gowork.pl/*",
+        "*://*.praca.pl/*"
       ],
       "css": [
         "src/content/style.css"
@@ -45,6 +49,7 @@
         "src/shared/constants.js",
         "src/shared/storage.js",
         "src/content/adapters/base-adapter.js",
+        "src/content/adapters/generic-adapter.js",
         "src/content/adapters/olx-adapter.js",
         "src/content/adapters/pracuj-adapter.js",
         "src/content/adapters/workua-adapter.js",
