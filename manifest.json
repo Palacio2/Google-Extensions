@@ -13,7 +13,10 @@
   ],
   "action": {
     "default_popup": "src/popup/popup.html",
-    "default_title": "__MSG_actionTitle__"
+    "default_title": "__MSG_actionTitle__",
+    "default_icon": {
+      "128": "src/assets/icon128.png"
+    }
   },
   "web_accessible_resources": [
     {
