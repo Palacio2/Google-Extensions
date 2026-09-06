@@ -1,6 +1,6 @@
-﻿# Privacy Policy for CleanJob (Job Filter)
+# Privacy Policy for CleanJob (Job Filter)
 
-*Last updated: September 3, 2026*
+*Last updated: September 6, 2026*
 
 **CleanJob** ("we", "our", or "the Extension") is committed to protecting your privacy. This Privacy Policy explains our practices regarding user data.
 
@@ -16,7 +16,7 @@ The Extension utilizes the standard chrome.storage.local API exclusively on your
 This data never leaves your computer and is never transmitted to our or any third-party servers.
 
 ## 3. Host Permissions
-CleanJob requires access to job portal websites (olx.ua, olx.pl, pracuj.pl) solely to inspect DOM elements and hide job postings that match your chosen filter criteria. The Extension does not modify, record, or track any other aspect of your browsing session.
+CleanJob requires access to job portal websites (olx.ua, olx.pl, pracuj.pl, work.ua, robota.ua, jooble.org, jooble.pl, gowork.pl, praca.pl) solely to inspect DOM elements and hide job postings that match your chosen filter criteria. The Extension does not modify, record, or track any other aspect of your browsing session.
 
 ## 4. Third-Party Services
 The Extension does not use third-party tracking scripts, analytics services, or remote code. All code is packaged locally within the extension.

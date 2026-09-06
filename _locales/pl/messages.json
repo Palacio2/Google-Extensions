@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Filtr Ofert Pracy"
+    "message": "Filtr Ofert Pracy — OLX, Pracuj.pl"
   },
   "extDesc": {
-    "message": "Ukrywa niechciane ogłoszenia na OLX i Pracuj.pl według słów kluczowych."
+    "message": "Filtruj oferty pracy bez spamu: ukrywaj taksówki (Bolt/Uber), kurierów i niechciane ogłoszenia na OLX.pl i Pracuj.pl."
   },
   "actionTitle": {
     "message": "Otwórz panel filtrów"
@@ -122,14 +122,41 @@
   "rate_short": {
     "message": "Oceń"
   },
-  "promo_title": {
+  "promo_transfergo_title": {
+    "message": "Tanie przelewy za granicę"
+  },
+  "promo_transfergo_desc": {
+    "message": "Szybkie i bezpieczne przelewy z Polski na Ukrainę przez TransferGo."
+  },
+  "promo_transfergo_btn": {
+    "message": "Sprawdź"
+  },
+  "promo_omio_title": {
+    "message": "Zniżka 46 PLN (10 €) na bilety"
+  },
+  "promo_omio_desc": {
+    "message": "Pociągi i autobusy w Europie. Kod na 46 zł: musicd3x6p9m"
+  },
+  "promo_omio_btn": {
+    "message": "Odbierz"
+  },
+  "promo_bank_title": {
+    "message": "Darmowe konto i karta"
+  },
+  "promo_bank_desc": {
+    "message": "Wygodne konto bankowe online bez ukrytych opłat."
+  },
+  "promo_bank_btn": {
+    "message": "Sprawdź"
+  },
+  "promo_district_title": {
     "message": "Szukasz mieszkania blisko pracy?"
   },
-  "promo_desc": {
-    "message": "Sprawdź bezpieczeństwo, ceny najmu i dojazd w Bydgoszczy na District Explorer."
+  "promo_district_desc": {
+    "message": "Sprawdź bezpieczeństwo i ceny najmu w Polsce na District Explorer."
   },
-  "promo_btn": {
-    "message": "Sprawdź dzielnice"
+  "promo_district_btn": {
+    "message": "Sprawdź"
   },
   "stats_hidden": {
     "message": "Zablokowany spam:"
@@ -142,5 +169,8 @@
   },
   "hidden_badge": {
     "message": "UKRYTO"
+  },
+  "filter_disabled_notice": {
+    "message": "⚠️ Filtrowanie wyłączone (włącz przełącznik u góry)"
   }
 }

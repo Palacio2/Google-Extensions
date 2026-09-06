@@ -6,8 +6,11 @@ window.JobFilterExt.OlxAdapter = class OlxAdapter extends window.JobFilterExt.Ba
       [data-cy="l-card"], 
       [data-testid*="l-card"], 
       [data-testid*="adCard"], 
+      [data-testid*="listing-card"],
       [data-testid="listing-grid"] > div, 
-      [data-testid="listing-grid"] > li
+      [data-testid="listing-grid"] > li,
+      [data-testid="listing-grid"] article,
+      div[data-cy*="listing"]
     `);
   }
 

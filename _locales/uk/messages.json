@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Фільтр Вакансій"
+    "message": "Фільтр Вакансій — OLX, Pracuj, Work"
   },
   "extDesc": {
-    "message": "Приховує непотрібні оголошення на OLX та Pracuj.pl за ключовими словами."
+    "message": "Фільтр роботи без спаму: приховує таксі (Bolt/Uber), кур'єрів та небажані вакансії на OLX, Pracuj.pl, Work.ua."
   },
   "actionTitle": {
     "message": "Відкрити панель фільтрів"
@@ -122,14 +122,41 @@
   "rate_short": {
     "message": "Оцінити"
   },
-  "promo_title": {
+  "promo_transfergo_title": {
+    "message": "Переказ коштів без комісії"
+  },
+  "promo_transfergo_desc": {
+    "message": "Швидкі перекази з Польщі в Україну з бонусом від TransferGo."
+  },
+  "promo_transfergo_btn": {
+    "message": "Отримати"
+  },
+  "promo_omio_title": {
+    "message": "Знижка 46 PLN (€10) на квитки"
+  },
+  "promo_omio_desc": {
+    "message": "Потяги й автобуси по Європі. Код на 46 zł: musicd3x6p9m"
+  },
+  "promo_omio_btn": {
+    "message": "Отримати"
+  },
+  "promo_bank_title": {
+    "message": "Картка для виплат у Польщі"
+  },
+  "promo_bank_desc": {
+    "message": "Оформлюй рахунок онлайн без комісій для зарплати та оплат."
+  },
+  "promo_bank_btn": {
+    "message": "Отримати"
+  },
+  "promo_district_title": {
     "message": "Шукаєш житло поруч з роботою?"
   },
-  "promo_desc": {
-    "message": "Перевір безпеку, ціни оренди та транспорт у Бидгощі на District Explorer."
+  "promo_district_desc": {
+    "message": "Безпека, ціни оренди та транспорт у Польщі на District Explorer."
   },
-  "promo_btn": {
-    "message": "Дивитись райони"
+  "promo_district_btn": {
+    "message": "Дивитись"
   },
   "stats_hidden": {
     "message": "Приховано спаму:"
@@ -142,5 +169,8 @@
   },
   "hidden_badge": {
     "message": "ПРИХОВАНО"
+  },
+  "filter_disabled_notice": {
+    "message": "⚠️ Фільтрацію вимкнено (увімкніть тумблер вгорі)"
   }
 }

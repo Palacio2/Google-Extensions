@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Фильтр Вакансий"
+    "message": "Фильтр Вакансий — OLX, Pracuj, Work"
   },
   "extDesc": {
-    "message": "Скрывает ненужные объявления на OLX и Pracuj.pl по ключевым словам."
+    "message": "Фильтр работы без спама: скрывает такси (Bolt/Uber), курьеров и нежелательные вакансии на OLX, Pracuj.pl, Work.ua."
   },
   "actionTitle": {
     "message": "Открыть панель фильтров"
@@ -122,14 +122,41 @@
   "rate_short": {
     "message": "Оценить"
   },
-  "promo_title": {
+  "promo_transfergo_title": {
+    "message": "Перевод денег без комиссии"
+  },
+  "promo_transfergo_desc": {
+    "message": "Быстрые переводы из Польши в Украину с бонусом от TransferGo."
+  },
+  "promo_transfergo_btn": {
+    "message": "Получить"
+  },
+  "promo_omio_title": {
+    "message": "Скидка 46 PLN (€10) на билеты"
+  },
+  "promo_omio_desc": {
+    "message": "Поезда и автобусы по Европе. Код на 46 zł: musicd3x6p9m"
+  },
+  "promo_omio_btn": {
+    "message": "Получить"
+  },
+  "promo_bank_title": {
+    "message": "Карта для выплат в Польше"
+  },
+  "promo_bank_desc": {
+    "message": "Оформляй счет онлайн без комиссий для зарплаты и оплат."
+  },
+  "promo_bank_btn": {
+    "message": "Получить"
+  },
+  "promo_district_title": {
     "message": "Ищешь жилье рядом с работой?"
   },
-  "promo_desc": {
-    "message": "Проверь безопасность, цены аренды и транспорт в Быдгоще на District Explorer."
+  "promo_district_desc": {
+    "message": "Безопасность, цены аренды и транспорт в Польше на District Explorer."
   },
-  "promo_btn": {
-    "message": "Смотреть районы"
+  "promo_district_btn": {
+    "message": "Смотреть"
   },
   "stats_hidden": {
     "message": "Скрыто спама:"
@@ -142,5 +169,8 @@
   },
   "hidden_badge": {
     "message": "СКРЫТО"
+  },
+  "filter_disabled_notice": {
+    "message": "⚠️ Фильтрация выключена (включите тумблер вверху)"
   }
 }

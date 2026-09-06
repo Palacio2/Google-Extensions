@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Job Filter"
+    "message": "Job Filter — OLX & Pracuj Cleaner"
   },
   "extDesc": {
-    "message": "Hides unwanted ads on OLX and Pracuj.pl by keywords."
+    "message": "Clean your job search: hide taxi (Bolt/Uber), courier ads, and agency spam on OLX, Pracuj.pl, Work.ua by keywords."
   },
   "actionTitle": {
     "message": "Open Filter Panel"
@@ -122,14 +122,41 @@
   "rate_short": {
     "message": "Rate"
   },
-  "promo_title": {
+  "promo_transfergo_title": {
+    "message": "Send Money With Zero Fees"
+  },
+  "promo_transfergo_desc": {
+    "message": "Fast and low-cost international transfers with TransferGo bonus."
+  },
+  "promo_transfergo_btn": {
+    "message": "Get bonus"
+  },
+  "promo_omio_title": {
+    "message": "46 PLN (€10) Off Tickets"
+  },
+  "promo_omio_desc": {
+    "message": "Buses & trains in Europe. Code for 46 zł: musicd3x6p9m"
+  },
+  "promo_omio_btn": {
+    "message": "Claim"
+  },
+  "promo_bank_title": {
+    "message": "Free Digital Bank Card"
+  },
+  "promo_bank_desc": {
+    "message": "Open an account online with zero fees for your salary."
+  },
+  "promo_bank_btn": {
+    "message": "Open"
+  },
+  "promo_district_title": {
     "message": "Looking for housing near work?"
   },
-  "promo_desc": {
-    "message": "Check safety, rent prices and transport in Bydgoszcz on District Explorer."
+  "promo_district_desc": {
+    "message": "Check safety and rent prices in Poland on District Explorer."
   },
-  "promo_btn": {
-    "message": "Explore Districts"
+  "promo_district_btn": {
+    "message": "Explore"
   },
   "stats_hidden": {
     "message": "Ads hidden:"
@@ -142,5 +169,8 @@
   },
   "hidden_badge": {
     "message": "HIDDEN"
+  },
+  "filter_disabled_notice": {
+    "message": "⚠️ Filtering paused (turn on the switch above)"
   }
 }

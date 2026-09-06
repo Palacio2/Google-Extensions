@@ -21,15 +21,82 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   i18n.applyToDOM();
   
-  // District Explorer Promo Banner Logic
+  // Rotating Promo Slider Banner Logic
   const config = window.JobFilterExt.Constants.CONFIG;
-  const promoBanner = document.getElementById('districtPromoBanner');
-  if (config && config.SHOW_DISTRICT_PROMO && promoBanner) {
-    promoBanner.style.display = 'flex';
-    promoBanner.href = config.DISTRICT_PROMO_URL;
+  const promoSliderBanner = document.getElementById('promoSliderBanner');
+  const promoInner = document.getElementById('promoInner');
+  const promoIcon = document.getElementById('promoIcon');
+  const promoTitle = document.getElementById('promoTitle');
+  const promoDesc = document.getElementById('promoDesc');
+  const promoBtn = document.getElementById('promoBtn');
+  const promoDots = document.getElementById('promoDots');
+
+  if (config && config.SHOW_PROMO_SLIDER && config.PROMO_BANNERS && promoSliderBanner) {
+    const banners = config.PROMO_BANNERS.filter(b => b.enabled !== false);
+    if (banners.length > 0) {
+      promoSliderBanner.style.display = 'flex';
+      let currentBannerIdx = 0;
+      let rotationInterval = null;
+
+    promoDots.innerHTML = '';
+    banners.forEach((_, idx) => {
+      const dot = document.createElement('div');
+      dot.className = 'promo-dot' + (idx === 0 ? ' active' : '');
+      promoDots.appendChild(dot);
+    });
+
+    const updateBanner = (idx) => {
+      const item = banners[idx];
+      promoSliderBanner.href = item.url;
+      if (item.icon && (item.icon.includes('.svg') || item.icon.includes('.png') || item.icon.includes('.jpg'))) {
+        const isWide = item.icon.toLowerCase().includes('logo');
+        if (isWide) {
+          promoIcon.innerHTML = `<div style="background: white; border-radius: 7px; padding: 3px 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; height: 26px;"><img src="${item.icon}" alt="logo" style="width: 40px; height: auto; display: block; object-fit: contain;"></div>`;
+        } else {
+          promoIcon.innerHTML = `<img src="${item.icon}" alt="logo" style="width: 26px; height: 26px; border-radius: 6px; object-fit: contain; display: block;">`;
+        }
+      } else {
+        promoIcon.textContent = item.icon;
+      }
+      promoTitle.textContent = i18n.t(item.titleKey);
+      promoDesc.textContent = i18n.t(item.descKey);
+      promoBtn.textContent = i18n.t(item.btnKey);
+
+      Array.from(promoDots.children).forEach((dot, dIdx) => {
+        dot.classList.toggle('active', dIdx === idx);
+      });
+    };
+
+    updateBanner(0);
+
+    if (banners.length > 1) {
+      const startRotation = () => {
+        stopRotation();
+        rotationInterval = setInterval(() => {
+          if (promoInner) promoInner.classList.add('slide-fade');
+          setTimeout(() => {
+            currentBannerIdx = (currentBannerIdx + 1) % banners.length;
+            updateBanner(currentBannerIdx);
+            if (promoInner) promoInner.classList.remove('slide-fade');
+          }, 250);
+        }, config.SLIDER_INTERVAL_MS || 5000);
+      };
+
+      const stopRotation = () => {
+        if (rotationInterval) clearInterval(rotationInterval);
+      };
+
+      startRotation();
+
+      promoSliderBanner.addEventListener('mouseenter', stopRotation);
+      promoSliderBanner.addEventListener('mouseleave', startRotation);
+    }
   }
+}
   
   const enableToggle = document.getElementById('enableToggle');
+  const mainToggleStatus = document.getElementById('mainToggleStatus');
+  const filterDisabledNotice = document.getElementById('filterDisabledNotice');
   const revealRow = document.getElementById('revealRow');
   const revealToggle = document.getElementById('revealToggle');
   const revealStatusText = document.getElementById('revealStatusText');
@@ -53,10 +120,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  const customCountrySelect = document.getElementById('customCountrySelect');
-  const selectSelected = document.getElementById('selectSelected');
-  const selectedCountryText = document.getElementById('selectedCountryText');
-  const selectItems = document.getElementById('selectItems');
+  const btnCountryPl = document.getElementById('btnCountryPl');
+  const btnCountryUa = document.getElementById('btnCountryUa');
 
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
@@ -122,89 +187,109 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // РОЗУМНЕ АВТОВИЗНАЧЕННЯ: перевіряємо відкриту вкладку і самі ставимо потрібну країну
   await new Promise((resolve) => {
-    chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
-      if (tabs && tabs[0] && tabs[0].url) {
-        try {
-          const url = new URL(tabs[0].url);
-          const hostname = url.hostname;
-          let detected = null;
-          if (hostname.endsWith('.ua')) detected = 'ua';
-          else if (hostname.endsWith('.pl')) detected = 'pl';
-          
-          if (detected && detected !== settings.targetCountry) {
-            settings.targetCountry = detected;
-            await window.JobFilterExt.Storage.saveSettings(settings);
+    try {
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.query) {
+        chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+          if (tabs && tabs[0] && tabs[0].url) {
+            try {
+              const url = new URL(tabs[0].url);
+              const hostname = url.hostname;
+              let detected = null;
+              if (hostname.endsWith('.ua')) detected = 'ua';
+              else if (hostname.endsWith('.pl')) detected = 'pl';
+              
+              if (detected && detected !== settings.targetCountry) {
+                settings.targetCountry = detected;
+                await window.JobFilterExt.Storage.saveSettings(settings);
+              }
+            } catch(e) {}
           }
-        } catch(e) {}
+          resolve();
+        });
+      } else {
+        // Якщо попап всередині iframe: визначаємо домен через ancestorOrigins або реферер
+        const ancestor = (window.location.ancestorOrigins && window.location.ancestorOrigins[0]) || document.referrer;
+        if (ancestor) {
+          try {
+            const url = new URL(ancestor);
+            let detected = null;
+            if (url.hostname.endsWith('.ua')) detected = 'ua';
+            else if (url.hostname.endsWith('.pl')) detected = 'pl';
+            if (detected && detected !== settings.targetCountry) {
+              settings.targetCountry = detected;
+              window.JobFilterExt.Storage.saveSettings(settings).then(resolve).catch(resolve);
+              return;
+            }
+          } catch(e) {}
+        }
+        resolve();
       }
+    } catch(e) {
       resolve();
-    });
+    }
   });
 
 
-  enableToggle.checked = settings.enabled;
-  revealToggle.checked = settings.revealHidden;
-  revealStatusText.textContent = settings.revealHidden ? i18n.t('on') : i18n.t('off');
+  const updateMainToggleUI = (isEnabled) => {
+    enableToggle.checked = isEnabled;
+    if (mainToggleStatus) {
+      mainToggleStatus.textContent = isEnabled ? i18n.t('on') : i18n.t('off');
+      mainToggleStatus.style.color = isEnabled ? '#2563eb' : '#ef4444';
+    }
+    if (filterDisabledNotice) {
+      filterDisabledNotice.style.display = isEnabled ? 'none' : 'block';
+    }
+  };
 
-  renderCustomSelect();
+  updateMainToggleUI(settings.enabled);
+  revealToggle.checked = settings.revealHidden;
+  if (revealStatusText) revealStatusText.textContent = settings.revealHidden ? i18n.t('on') : i18n.t('off');
+
+  function updateCountrySegmentUI(country) {
+    if (btnCountryPl && btnCountryUa) {
+      btnCountryPl.classList.toggle('active', country === 'pl');
+      btnCountryUa.classList.toggle('active', country === 'ua');
+    }
+  }
+
+  updateCountrySegmentUI(settings.targetCountry);
   renderCategories();
   renderCustomKeywords();
 
-  function renderCustomSelect() {
-    selectItems.innerHTML = '';
-    const currentCountryObj = window.JobFilterExt.Constants.COUNTRIES.find(c => c.id === settings.targetCountry) || window.JobFilterExt.Constants.COUNTRIES[0];
-    selectedCountryText.textContent = i18n.t(currentCountryObj.nameKey);
-
-    window.JobFilterExt.Constants.COUNTRIES.forEach(country => {
-      const div = document.createElement('div');
-      div.textContent = i18n.t(country.nameKey);
-      if (country.id === settings.targetCountry) {
-        div.classList.add('same-as-selected');
-      }
-
-      div.addEventListener('click', async (e) => {
-        e.stopPropagation();
-        selectedCountryText.textContent = div.textContent;
-        settings.targetCountry = country.id;
-        // БІЛЬШЕ НЕ СКИДАЄМО settings.activeGroups = [] !
+  if (btnCountryPl) {
+    btnCountryPl.addEventListener('click', async () => {
+      if (settings.targetCountry !== 'pl') {
+        settings.targetCountry = 'pl';
+        updateCountrySegmentUI('pl');
         await window.JobFilterExt.Storage.saveSettings(settings);
         renderCategories();
-        renderCustomKeywords(); // Оновити також свої слова для нової країни!
-        
-        Array.from(selectItems.children).forEach(c => c.classList.remove('same-as-selected'));
-        div.classList.add('same-as-selected');
-        closeSelect();
-      });
-      selectItems.appendChild(div);
+        renderCustomKeywords();
+      }
     });
   }
 
-  function toggleSelect() {
-    customCountrySelect.classList.toggle('open');
-    selectItems.classList.toggle('select-hide');
+  if (btnCountryUa) {
+    btnCountryUa.addEventListener('click', async () => {
+      if (settings.targetCountry !== 'ua') {
+        settings.targetCountry = 'ua';
+        updateCountrySegmentUI('ua');
+        await window.JobFilterExt.Storage.saveSettings(settings);
+        renderCategories();
+        renderCustomKeywords();
+      }
+    });
   }
-  function closeSelect() {
-    customCountrySelect.classList.remove('open');
-    selectItems.classList.add('select-hide');
-  }
-
-  selectSelected.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleSelect();
-  });
-  document.addEventListener('click', () => {
-    closeSelect();
-  });
 
   enableToggle.addEventListener('change', async (e) => {
     settings.enabled = e.target.checked;
+    updateMainToggleUI(settings.enabled);
     await window.JobFilterExt.Storage.saveSettings(settings);
   });
 
   revealRow.addEventListener('click', async () => {
     revealToggle.checked = !revealToggle.checked;
     settings.revealHidden = revealToggle.checked;
-    revealStatusText.textContent = revealToggle.checked ? i18n.t('on') : i18n.t('off');
+    if (revealStatusText) revealStatusText.textContent = revealToggle.checked ? i18n.t('on') : i18n.t('off');
     await window.JobFilterExt.Storage.saveSettings(settings);
   });
 
