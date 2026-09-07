@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="uk">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <style>
@@ -10,7 +10,7 @@
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     color: #f8fafc;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 50px 80px; position: relative; overflow: hidden;
+    padding: 50px 65px; position: relative; overflow: hidden;
   }
   .glow-red {
     position: absolute; width: 750px; height: 750px;
@@ -22,7 +22,7 @@
     background: radial-gradient(circle, rgba(59, 130, 246, 0.16) 0%, transparent 70%);
     bottom: -150px; left: -100px; pointer-events: none;
   }
-  .left { max-width: 570px; z-index: 2; }
+  .left { max-width: 520px; z-index: 2; }
   .pill-tag {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(239, 68, 68, 0.16); border: 1px solid rgba(239, 68, 68, 0.45);
@@ -30,7 +30,7 @@
     font-size: 14px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 20px;
   }
   h1 {
-    font-size: 46px; font-weight: 800; line-height: 1.18; letter-spacing: -0.5px; margin-bottom: 18px;
+    font-size: 45px; font-weight: 800; line-height: 1.18; letter-spacing: -0.5px; margin-bottom: 18px;
     background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
@@ -38,9 +38,9 @@
     background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
-  p.desc { font-size: 19px; line-height: 1.5; color: #94a3b8; margin-bottom: 30px; }
+  p.desc { font-size: 18px; line-height: 1.5; color: #94a3b8; margin-bottom: 28px; }
   .features { display: flex; flex-direction: column; gap: 16px; }
-  .feat-item { display: flex; align-items: center; gap: 15px; font-size: 17px; font-weight: 600; color: #e2e8f0; }
+  .feat-item { display: flex; align-items: center; gap: 15px; font-size: 16.5px; font-weight: 600; color: #e2e8f0; }
   .feat-icon {
     width: 42px; height: 42px; border-radius: 11px;
     background: rgba(239, 68, 68, 0.16); border: 1px solid rgba(239, 68, 68, 0.35);
@@ -49,7 +49,7 @@
 
   .right { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; }
   .browser-frame {
-    width: 590px; height: 590px; background: #0f172a;
+    width: 630px; background: #0f172a;
     border-radius: 20px; overflow: hidden;
     border: 2px solid rgba(239, 68, 68, 0.45);
     box-shadow: -15px 30px 75px -10px rgba(0, 0, 0, 0.88), 0 0 50px rgba(239, 68, 68, 0.25);
@@ -64,8 +64,16 @@
   .b-dots { display: flex; gap: 6px; }
   .b-dot { width: 10px; height: 10px; border-radius: 50%; background: #334155; }
   .b-title { font-size: 13px; font-weight: 700; color: #fca5a5; }
-  .browser-content { flex: 1; overflow: hidden; background: #f8fafc; }
-  .browser-content img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .browser-content {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .browser-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 </style>
 </head>
 <body>
@@ -74,27 +82,27 @@
 
   <div class="left">
     <div class="pill-tag">
-      <span>👀 РЕЖИМ ПЕРЕГЛЯДУ</span>
+      <span>👀 PREVIEW MODE</span>
     </div>
-    <h1>Бачте приховане <span>без страху пропустити роботу</span></h1>
-    <p class="desc">Сумніваєтесь у фільтрації? Увімкніть Режим перегляду: вакансії не зникають, а підсвічуються червоною рамкою з точною причиною блокування.</p>
+    <h1>See hidden jobs <span>without fear of missing out</span></h1>
+    <p class="desc">Have doubts about filters? Turn on Preview Mode: jobs aren't removed, but highlighted in red with the exact reason why they matched.</p>
     
     <div class="features">
       <div class="feat-item">
         <div class="feat-icon">🏷️</div>
-        <span>Чітке маркування: ПРИХОВАНО (категорія в), ПРИХОВАНО (охоронець)</span>
+        <span>Clear badges: HIDDEN (seller), HIDDEN (warehouse worker)</span>
       </div>
       <div class="feat-item">
         <div class="feat-icon">🔄</div>
-        <span>Миттєве перемикання в 1 клік — повний контроль завжди у вас</span>
+        <span>Instant 1-click toggle — full control is always in your hands</span>
       </div>
       <div class="feat-item">
         <div class="feat-icon">🛡️</div>
-        <span>Нічого не видаляється назавжди: безпечно та прозоро</span>
+        <span>Nothing is deleted permanently: 100% safe & transparent</span>
       </div>
       <div class="feat-item">
         <div class="feat-icon">🔍</div>
-        <span>Причина блокування вказується прямо на кожній картці</span>
+        <span>Blocking reason is displayed directly on each job card</span>
       </div>
     </div>
   </div>
@@ -103,10 +111,10 @@
     <div class="browser-frame">
       <div class="browser-header">
         <div class="b-dots"><div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div></div>
-        <div class="b-title">🔴 OLX.ua — Режим перегляду активний</div>
+        <div class="b-title">🔴 OLX.pl — Preview Mode Active</div>
       </div>
       <div class="browser-content">
-        <img src="raw/olx_reveal_mode.png" alt="Reveal Mode">
+        <img src="raw/olx_reveal_mode.png" alt="OLX Preview Mode">
       </div>
     </div>
   </div>
