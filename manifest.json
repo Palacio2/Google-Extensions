@@ -21,18 +21,14 @@
   "web_accessible_resources": [
     {
       "resources": [
+        "src/popup/popup.html",
+        "src/popup/css/*",
+        "src/popup/js/*",
+        "src/shared/*",
         "src/assets/*"
       ],
       "matches": [
-        "*://*.olx.ua/*",
-        "*://*.olx.pl/*",
-        "*://*.pracuj.pl/*",
-        "*://*.work.ua/*",
-        "*://*.robota.ua/*",
-        "*://*.jooble.org/*",
-        "*://*.jooble.pl/*",
-        "*://*.gowork.pl/*",
-        "*://*.praca.pl/*"
+        "<all_urls>"
       ]
     }
   ],

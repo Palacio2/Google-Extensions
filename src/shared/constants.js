@@ -7,7 +7,7 @@ window.JobFilterExt.Constants = {
   ],
   
   CONFIG: {
-    SHOW_PROMO_SLIDER: true,
+    SHOW_PROMO_SLIDER: false,
     SLIDER_INTERVAL_MS: 5000,
     PROMO_BANNERS: [
       {
