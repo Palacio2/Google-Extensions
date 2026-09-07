@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Концепти Логотипів — Job Filter</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f172a; color: #f8fafc;
+    padding: 30px 40px; display: flex; flex-direction: column; align-items: center;
+    width: 1300px;
+  }
+  h1 { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  p.sub { color: #94a3b8; font-size: 15px; margin-bottom: 30px; }
+  .grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px; width: 100%;
+  }
+  .card {
+    background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center;
+  }
+  .card h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; text-align: center; }
+  .card p.desc { font-size: 12px; color: #94a3b8; text-align: center; margin-bottom: 16px; height: 36px; }
+  .main-preview {
+    width: 120px; height: 120px; border-radius: 20px; overflow: hidden;
+    margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    background: #090d16; display: flex; align-items: center; justify-content: center;
+  }
+  .main-preview img { width: 100%; height: 100%; object-fit: contain; }
+  .sizes-row {
+    display: flex; align-items: flex-end; justify-content: center; gap: 14px;
+    background: rgba(15, 23, 42, 0.6); padding: 12px 14px; border-radius: 12px; width: 100%;
+  }
+  .size-box { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .size-box span { font-size: 10.5px; color: #64748b; font-weight: 600; }
+  .s-48 img { width: 48px; height: 48px; border-radius: 8px; }
+  .s-32 img { width: 32px; height: 32px; border-radius: 6px; }
+  .s-16 img { width: 16px; height: 16px; border-radius: 3px; }
+</style>
+</head>
+<body>
+  <h1>Концепти Логотипів для Розширення</h1>
+  <p class="sub">Порівняння: як логотип виглядає у великому розмірі та на панелі браузера (48px, 32px, 16px)</p>
+
+  <div class="grid">
+    <!-- Concept 1 -->
+    <div class="card">
+      <h3>1. App Squircle (Фільтр)</h3>
+      <p class="desc">Сучасний градієнт iOS/Chrome. Максимальна чіткість на 16px.</p>
+      <div class="main-preview">
+        <img src="concept_1_tile_funnel.jpg" alt="Concept 1">
+      </div>
+      <div class="sizes-row">
+        <div class="size-box s-48"><img src="concept_1_tile_funnel.jpg"><span>48px</span></div>
+        <div class="size-box s-32"><img src="concept_1_tile_funnel.jpg"><span>32px</span></div>
+        <div class="size-box s-16"><img src="concept_1_tile_funnel.jpg"><span>16px</span></div>
+      </div>
+    </div>
+
+    <!-- Concept 2 -->
+    <div class="card">
+      <h3>2. Преміум 3D Щит</h3>
+      <p class="desc">Об'ємний скляний щит із лініями фільтрації та галочкою.</p>
+      <div class="main-preview">
+        <img src="concept_2_3d_shield.jpg" alt="Concept 2">
+      </div>
+      <div class="sizes-row">
+        <div class="size-box s-48"><img src="concept_2_3d_shield.jpg"><span>48px</span></div>
+        <div class="size-box s-32"><img src="concept_2_3d_shield.jpg"><span>32px</span></div>
+        <div class="size-box s-16"><img src="concept_2_3d_shield.jpg"><span>16px</span></div>
+      </div>
+    </div>
+
+    <!-- Concept 3 -->
+    <div class="card">
+      <h3>3. Неонова Лійка</h3>
+      <p class="desc">Футуристичний фільтр з яскравим неоновим сяйвом.</p>
+      <div class="main-preview">
+        <img src="concept_3_glowing_funnel.jpg" alt="Concept 3">
+      </div>
+      <div class="sizes-row">
+        <div class="size-box s-48"><img src="concept_3_glowing_funnel.jpg"><span>48px</span></div>
+        <div class="size-box s-32"><img src="concept_3_glowing_funnel.jpg"><span>32px</span></div>
+        <div class="size-box s-16"><img src="concept_3_glowing_funnel.jpg"><span>16px</span></div>
+      </div>
+    </div>
+
+    <!-- Current Fixed -->
+    <div class="card">
+      <h3>4. Поточний Щит (Без полів)</h3>
+      <p class="desc">Оригінальний щит, очищений від 50% пустих полів.</p>
+      <div class="main-preview">
+        <img src="concept_current_shield_fixed.png" alt="Current Fixed">
+      </div>
+      <div class="sizes-row">
+        <div class="size-box s-48"><img src="concept_current_shield_fixed.png"><span>48px</span></div>
+        <div class="size-box s-32"><img src="concept_current_shield_fixed.png"><span>32px</span></div>
+        <div class="size-box s-16"><img src="concept_current_shield_fixed.png"><span>16px</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
