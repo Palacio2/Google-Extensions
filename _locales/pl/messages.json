@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Filtr Ofert Pracy — OLX, Pracuj.pl"
+    "message": "Filtr Ofert Pracy"
   },
   "extDesc": {
-    "message": "Filtruj oferty pracy bez spamu: ukrywaj taksówki (Bolt/Uber), kurierów i niechciane ogłoszenia na OLX.pl i Pracuj.pl."
+    "message": "Inteligentny filtr ofert pracy: ukrywa taksówki, kurierów i niechciane ogłoszenia według słów kluczowych i kategorii."
   },
   "actionTitle": {
     "message": "Otwórz panel filtrów"

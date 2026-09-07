@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Job Filter — OLX & Pracuj Cleaner"
+    "message": "Job Filter — Smart Search"
   },
   "extDesc": {
-    "message": "Clean your job search: hide taxi (Bolt/Uber), courier ads, and agency spam on OLX, Pracuj.pl, Work.ua by keywords."
+    "message": "Smart job search filter: hides taxi, courier, and repetitive listings using customizable keyword and category filters."
   },
   "actionTitle": {
     "message": "Open Filter Panel"
