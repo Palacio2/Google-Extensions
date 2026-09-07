@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px; height: 800px;
+    background: radial-gradient(circle at 50% 20%, #1e293b 0%, #090d16 100%);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #f8fafc;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 40px 60px; position: relative; overflow: hidden;
+  }
+  .glow-top {
+    position: absolute; width: 900px; height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    top: -150px; left: 50%; transform: translateX(-50%); pointer-events: none;
+  }
+  .header-box {
+    text-align: center; z-index: 2; max-width: 800px;
+  }
+  .pill-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #60a5fa; padding: 6px 16px; border-radius: 9999px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 40px; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h1 span.before { color: #f87171; -webkit-text-fill-color: #f87171; }
+  h1 span.after { color: #4ade80; -webkit-text-fill-color: #4ade80; }
+  p.desc { font-size: 17px; color: #94a3b8; font-weight: 400; }
+
+  .comparison-container {
+    display: flex; align-items: center; justify-content: center;
+    gap: 30px; width: 100%; z-index: 2; margin-top: 15px; position: relative;
+  }
+
+  .window-card {
+    flex: 1; height: 500px; background: #0f172a;
+    border-radius: 18px; overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+    position: relative;
+  }
+  .window-card.bad {
+    border: 2px solid rgba(239, 68, 68, 0.4);
+  }
+  .window-card.good {
+    border: 2px solid rgba(34, 197, 94, 0.4);
+  }
+
+  .window-header {
+    height: 44px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 16px; background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .window-dots { display: flex; gap: 6px; }
+  .w-dot { width: 10px; height: 10px; border-radius: 50%; background: #334155; }
+  .window-title-badge {
+    font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .badge-bad { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+  .badge-good { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+
+  .window-content {
+    flex: 1; overflow: hidden; position: relative; background: #f1f5f9;
+  }
+  .window-content img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
+  }
+
+  .vs-badge {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    background: #1e293b; border: 2px solid #3b82f6; color: white;
+    width: 54px; height: 54px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 900; z-index: 10;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  }
+
+  .bottom-bar {
+    z-index: 2; display: flex; align-items: center; gap: 12px;
+    background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 24px; border-radius: 9999px; font-size: 14px; font-weight: 600; color: #cbd5e1;
+  }
+  .bottom-bar strong { color: #38bdf8; }
+</style>
+</head>
+<body>
+  <div class="glow-top"></div>
+
+  <div class="header-box">
+    <div class="pill-tag">
+      <span>✨ РЕАЛЬНИЙ РЕЗУЛЬТАТ НА OLX</span>
+    </div>
+    <h1>Стрічка вакансій: <span class="before">ДО</span> та <span class="after">ПІСЛЯ</span></h1>
+    <p class="desc">Зліва — стрічка забита таксі, кур'єрами та спамом. Справа — залишаються лише реальні вакансії.</p>
+  </div>
+
+  <div class="comparison-container">
+    <div class="window-card bad">
+      <div class="window-header">
+        <div class="window-dots"><div class="w-dot"></div><div class="w-dot"></div><div class="w-dot"></div></div>
+        <div class="window-title-badge badge-bad">
+          <span>❌ ДО: Звичайний пошук (80% спаму)</span>
+        </div>
+      </div>
+      <div class="window-content">
+        <img src="raw/olx_reveal_mode.png" alt="OLX Before">
+      </div>
+    </div>
+
+    <div class="vs-badge">VS</div>
+
+    <div class="window-card good">
+      <div class="window-header">
+        <div class="window-dots"><div class="w-dot"></div><div class="w-dot"></div><div class="w-dot"></div></div>
+        <div class="window-title-badge badge-good">
+          <span>✅ ПІСЛЯ: З Фільтром Вакансій</span>
+        </div>
+      </div>
+      <div class="window-content">
+        <img src="raw/olx_cleaned.png" alt="OLX Cleaned">
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <span>⏱️ Економте <strong>до 30 хвилин щодня</strong> під час пошуку серйозної роботи</span>
+  </div>
+</body>
+</html>

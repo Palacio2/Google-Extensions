@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px; height: 800px;
+    background: radial-gradient(circle at 15% 20%, #1e293b 0%, #090d16 100%);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #f8fafc;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 60px 80px; position: relative; overflow: hidden;
+  }
+  .glow-blue {
+    position: absolute; width: 750px; height: 750px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0) 70%);
+    top: -150px; right: 80px; pointer-events: none;
+  }
+  .glow-purple {
+    position: absolute; width: 550px; height: 550px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(99, 102, 241, 0) 70%);
+    bottom: -150px; left: -100px; pointer-events: none;
+  }
+  .left { max-width: 610px; z-index: 2; }
+  .pill-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #60a5fa; padding: 7px 16px; border-radius: 9999px;
+    font-size: 13.5px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 46px; font-weight: 800; line-height: 1.18; letter-spacing: -0.5px; margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h1 span {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  p.desc { font-size: 18.5px; line-height: 1.5; color: #94a3b8; margin-bottom: 32px; }
+  .features { display: flex; flex-direction: column; gap: 16px; margin-bottom: 34px; }
+  .feat-item { display: flex; align-items: center; gap: 14px; font-size: 16px; font-weight: 600; color: #e2e8f0; }
+  .feat-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35);
+    display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .supported-sites {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 16px; border-radius: 12px; width: fit-content;
+  }
+  .supported-label { font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+  .site-badge {
+    font-size: 12.5px; font-weight: 700; color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1); padding: 4px 10px; border-radius: 6px;
+  }
+  .right { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; }
+  .mockup-frame {
+    position: relative; border-radius: 26px; padding: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 100%);
+    box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.8), 0 0 50px rgba(59, 130, 246, 0.3);
+    transform: perspective(1200px) rotateY(-8deg) rotateX(4deg);
+  }
+  .mockup-img { width: 375px; height: auto; border-radius: 20px; display: block; }
+  .floating-badge {
+    position: absolute; bottom: -16px; left: -22px;
+    background: #0f172a; border: 1px solid rgba(16, 185, 129, 0.5);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    padding: 10px 16px; border-radius: 12px;
+    display: flex; align-items: center; gap: 10px;
+    color: #34d399; font-size: 13.5px; font-weight: 700;
+  }
+  .pulse-dot { width: 10px; height: 10px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981; }
+</style>
+</head>
+<body>
+  <div class="glow-blue"></div>
+  <div class="glow-purple"></div>
+
+  <div class="left">
+    <div class="pill-tag">
+      <span>🚀 РОЗШИРЕННЯ ДЛЯ CHROME</span>
+    </div>
+    <h1>Досить витрачати час на <span>спам-вакансії</span></h1>
+    <p class="desc">Розумний фільтр для сайтів пошуку роботи. Автоматично приховує таксі, кур'єрів та набридливі агентства в 1 клік.</p>
+    
+    <div class="features">
+      <div class="feat-item">
+        <div class="feat-icon">🎯</div>
+        <span>Готові фільтри: таксі (Uber, Bolt, Uklon), кур'єри (Glovo), водії, охорона</span>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">⚡</div>
+        <span>Блискавична швидкість — приховує сміття миттєво при завантаженні</span>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">🔒</div>
+        <span>100% приватності — працює локально, нуль збору даних</span>
+      </div>
+    </div>
+
+    <div class="supported-sites">
+      <span class="supported-label">Працює на:</span>
+      <span class="site-badge">OLX.ua</span>
+      <span class="site-badge">Work.ua</span>
+      <span class="site-badge">Robota.ua</span>
+      <span class="site-badge">Pracuj.pl</span>
+      <span class="site-badge">Jooble</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="mockup-frame">
+      <img class="mockup-img" src="raw/popup_ua_clean.png" alt="CleanJob Popup">
+      <div class="floating-badge">
+        <div class="pulse-dot"></div>
+        <span>Приховано 600+ спам-оголошень</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
